@@ -45,18 +45,10 @@ table {
 
 html {
   font-size: 12px;
-<<<<<<< HEAD
-  box-sizing: border-box;
-}
-
-* {
-  box-sizing: inherit;
-=======
 }
 
 * {
   box-sizing: border-box;
->>>>>>> gh-pages
 }
 
 body {
@@ -75,12 +67,6 @@ body {
   align-items: center;
 }
 #nav-bar:hover {
-<<<<<<< HEAD
-  background: rgba(0, 0, 0, 0.2);
-}
-#nav-bar a {
-  color: white;
-=======
   background: rgba(255, 255, 255, 0.4);
 }
 #nav-bar .nav-title {
@@ -102,7 +88,6 @@ body {
 }
 #nav-bar .nav-menu a {
   color: #fff;
->>>>>>> gh-pages
   font-weight: 100;
   font-size: 1.4rem;
   letter-spacing: 2px;
@@ -114,37 +99,6 @@ body {
   text-align: center;
   transition: all 0.5s;
 }
-<<<<<<< HEAD
-#nav-bar a:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-
-.nav-title {
-  flex: 1 1 400px;
-  font-size: 3rem;
-  padding: 20px 10px 20px 30px;
-}
-
-.nav-menu {
-  flex: 10 5 400px;
-  display: flex;
-  margin: 0;
-  padding: 0;
-}
-.nav-menu li {
-  flex: 3;
-}
-.nav-menu .social {
-  flex: 1;
-}
-
-#slide {
-  height: 100vh;
-  background: url("../img/image1.jpg");
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-=======
 #nav-bar .nav-menu a:hover {
   background: rgba(0, 0, 0, 0.5);
 }
@@ -202,5 +156,4 @@ body {
 }
 #slide .active, #slide .dot:hover {
   background-color: #555;
->>>>>>> gh-pages
 }
