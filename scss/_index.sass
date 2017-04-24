@@ -1,0 +1,67 @@
+
+// %test 
+//     color: black
+//     font-size: 15px
+// @mixin bgg($pad: 1px,$ped: 5px)
+//     padding: $pad
+//     margin: $ped
+// .test
+//     @extend %test
+//     +bgg(3px,10px)
+//     +background-image(linear-gradient($color,darken($color,20%)))
+html
+    font-size: 12px
+    box-sizing: border-box
+
+*
+    box-sizing: inherit
+
+body
+    font-family: "Microsoft JhengHei"
+
+#nav-bar
+    width: 100%
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 100
+    color: #fff
+    background: transparent
+    display: flex
+    align-items: center
+    &:hover
+        background: rgba(0, 0, 0, 0.2) 
+    a
+        color: white
+        font-weight: 100
+        font-size: 1.4rem
+        letter-spacing: 2px
+        text-decoration: none
+        padding: 20px 5px
+        display: inline-block
+        width: 100%
+        height: 100%
+        text-align: center
+        transition: all 0.5s
+        &:hover
+            background: rgba(0, 0, 0, 0.3) 
+     
+.nav-title
+    flex: 1 1 400px
+    font-size: 3rem
+    padding: 20px 10px 20px 30px
+    
+.nav-menu
+    flex: 10 5 400px
+    display: flex
+    margin: 0
+    padding: 0
+    li
+        flex: 3
+    .social
+        flex: 1
+
+#slide
+    height: 100vh
+    +bg(image1,jpg)
+    
