@@ -1,0 +1,30 @@
+$color: #fff
+$width: 968px
+
+@mixin bg($name,$bg)
+    background: url("../img/#{$name}.#{$bg}")
+    // width: image-width("../img/#{$name}.#{$bg}")
+    // height: image-height("../img/#{$name}.#{$bg}")
+    background-size: cover
+    background-position: 50% 50%
+    background-repeat: no-repeat
+
+@mixin breakpoint($point)
+    @if $point == pc
+        @media only screen and (maxx-width: 1024px)
+            @content
+    @else if $point == pad
+        @media only screen and (max-width: 768px)
+            @content
+    @else if $point == mobile
+        @media only screen and (max-width: 320px)
+            @content
+
+@mixin gongrid-rwd($cloum_number,$cloum-gutter)
+    width: ($width-$cloum-gutter*($cloum_number-1)) / $cloum_number
+    margin-right: $cloum-gutter
+    box-sizing: border-box
+    -webkit-box-sizing: border-box
+    -moz-box-sizing: border-box
+    
+
