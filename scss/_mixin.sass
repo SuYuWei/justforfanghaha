@@ -11,7 +11,7 @@ $width: 968px
 
 @mixin breakpoint($point)
     @if $point == pc
-        @media only screen and (maxx-width: 1024px)
+        @media only screen and (max-width: 1024px)
             @content
     @else if $point == pad
         @media only screen and (max-width: 768px)
