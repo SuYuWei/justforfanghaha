@@ -1,6 +1,12 @@
 var slideIndex = 1;
 var timeOut;
+
 showSlides(slideIndex);
+
+var menu = document.querySelector(".hamburger");
+menu.addEventListener("click",function(){
+	this.classList.toggle("open");
+});
 
 function showSlides(index){
     var slides = document.querySelectorAll(".mySlides");
@@ -31,3 +37,4 @@ function currentSlide(index){
     clearTimeout(timeOut);
     showSlides(slideIndex = index);
 }
+

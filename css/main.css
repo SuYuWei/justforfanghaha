@@ -66,7 +66,6 @@ body {
   color: #fff;
   background: transparent;
   display: flex;
-  align-items: center;
 }
 #nav-bar .nav-title {
   -webkit-flex: 1 1 250px;
@@ -75,12 +74,53 @@ body {
   padding: 15px 10px;
   text-align: center;
 }
+#nav-bar .hamburger {
+  width: 40px;
+  height: 40px;
+  float: right;
+  position: relative;
+  right: 5px;
+  top: 8px;
+  cursor: pointer;
+  display: none;
+}
+#nav-bar .hamburger span {
+  display: block;
+  width: 80%;
+  height: 3px;
+  background: #fff;
+  border-radius: 9px;
+  position: absolute;
+}
+#nav-bar .hamburger span:nth-child(1) {
+  top: 5px;
+}
+#nav-bar .hamburger span:nth-child(2), #nav-bar .hamburger span:nth-child(3) {
+  top: 15px;
+}
+#nav-bar .hamburger span:nth-child(4) {
+  top: 25px;
+}
+#nav-bar .hamburger.open span:nth-child(1), #nav-bar .hamburger.open span:nth-child(4) {
+  opacity: 0;
+}
+#nav-bar .hamburger.open span:nth-child(2) {
+  transform: rotate(45deg);
+}
+#nav-bar .hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg);
+}
+#nav-bar .hamburger.open + .nav-menu {
+  display: flex;
+}
 #nav-bar .nav-menu {
   -webkit-flex: 10 5 400px;
   flex: 10 5 400px;
   display: flex;
   margin: 0;
   padding: 0;
+  -webkit-align-items: center;
+  align-items: center;
 }
 #nav-bar .nav-menu li {
   -webkit-flex: 3;
@@ -96,7 +136,7 @@ body {
   font-size: 1.2rem;
   letter-spacing: 2px;
   text-decoration: none;
-  padding: 15px 5px;
+  padding: 20px 5px;
   display: inline-block;
   width: 100%;
   height: 100%;
@@ -116,6 +156,9 @@ body {
 #nav-bar:hover a {
   color: #555;
 }
+#nav-bar:hover .hamburger span {
+  background: #555;
+}
 
 #slide {
   position: relative;
@@ -132,9 +175,9 @@ body {
   color: #fff;
   background: rgba(0, 0, 0, 0.5);
   font-size: 1.5rem;
-  padding: 8px 12px;
+  padding: 8px 5px;
   position: absolute;
-  bottom: 3rem;
+  bottom: 2rem;
   margin-left: 1rem;
 }
 #slide .prev, #slide .next {
@@ -156,7 +199,7 @@ body {
 #slide .dot-block {
   position: absolute;
   width: 100%;
-  bottom: 3rem;
+  bottom: 2rem;
   text-align: center;
 }
 #slide .dot {
@@ -205,9 +248,10 @@ body {
 }
 @media screen and (max-width: 1000px) {
   #nav-bar {
-    display: block;
+    flex-wrap: wrap;
   }
   #nav-bar .nav-menu {
+    display: none;
     flex-wrap: wrap;
   }
   #nav-bar .nav-menu li {
@@ -216,10 +260,24 @@ body {
   #nav-bar .nav-menu a {
     flex: 1 1 25%;
   }
+  #nav-bar .hamburger {
+    display: block;
+  }
 }
 @media screen and (max-width: 500px) {
+  #nav-bar .nav-title {
+    font-size: 1.5rem;
+  }
   #nav-bar .nav-menu li {
     flex-basis: 100%;
-    order: 3;
+  }
+  #nav-bar .nav-menu a {
+    font-size: 1rem;
+    letter-spacing: 2px;
+    padding: 10px 5px;
+  }
+
+  #slide .mySlides .text {
+    font-size: 1rem;
   }
 }
