@@ -126,11 +126,15 @@ body {
   -webkit-flex: 3;
   flex: 3;
 }
+#nav-bar .nav-menu li:hover {
+  color: #fff;
+  background: #f76b50;
+}
 #nav-bar .nav-menu .social {
   -webkit-flex: 1;
   flex: 1;
 }
-#nav-bar .nav-menu a {
+#nav-bar .nav-menu li > a {
   color: #fff;
   font-weight: 100;
   font-size: 1.2rem;
@@ -142,22 +146,59 @@ body {
   height: 100%;
   text-align: center;
 }
-#nav-bar .nav-menu a:hover {
-  color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+#nav-bar .nav-menu .dropdown-bg {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  border-radius: 2px;
+  background: #f7f7f7;
+  transition: all 0.5s;
+  opacity: 0;
+}
+#nav-bar .nav-menu .dropdown-bg .arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  display: block;
+  background: #f7f7f7;
+  transform: translateY(-50%) rotate(45deg);
+}
+#nav-bar .nav-menu .dropdown-bg.open {
+  opacity: 1;
+}
+#nav-bar .nav-menu .dropdown {
+  position: absolute;
+  overflow: hidden;
+  padding: 10px;
+  opacity: 0;
+  display: none;
+}
+#nav-bar .nav-menu .dropdown div {
+  padding: 5px;
+  text-align: center;
+}
+#nav-bar .nav-menu .dropdown a {
+  color: #f76b50;
+  letter-spacing: 2px;
+  text-decoration: none;
+  padding: 8px 0;
+  width: 100%;
+  display: block;
+}
+#nav-bar .nav-menu .dropdown a:hover {
+  border-bottom: 1px dashed #f76b50;
+}
+#nav-bar .nav-menu .trigger-enter .dropdown {
+  display: block;
+}
+#nav-bar .nav-menu .trigger-enter-active .dropdown {
+  opacity: 1;
 }
 #nav-bar:hover {
-  color: #555;
-  background: rgba(255, 255, 255, 0.4);
-  -moz-box-shadow: 1px 0 5px #555;
-  -webkit-box-shadow: 1px 0 5px #555;
-  box-shadow: 1px 0 5px #555;
-}
-#nav-bar:hover a {
-  color: #555;
-}
-#nav-bar:hover .hamburger span {
-  background: #555;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 #slide {
@@ -246,6 +287,27 @@ body {
     opacity: 1;
   }
 }
+#container {
+  display: flex;
+  height: 600px;
+}
+
+#article-content {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 20px;
+  justify-content: center;
+}
+#article-content .article {
+  width: 400px;
+  height: 400px;
+  border: 1px solid black;
+  margin: 40px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @media screen and (max-width: 1000px) {
   #nav-bar {
     flex-wrap: wrap;
