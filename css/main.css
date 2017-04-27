@@ -53,6 +53,10 @@ html {
   box-sizing: border-box;
 }
 
+li {
+  list-style: none;
+}
+
 body {
   font-family: "Microsoft JhengHei";
 }
@@ -70,7 +74,6 @@ body {
 #nav-bar .nav-title {
   -webkit-flex: 1 1 250px;
   flex: 1 1 250px;
-  font-size: 2rem;
   padding: 15px 10px;
   text-align: center;
 }
@@ -80,7 +83,7 @@ body {
   float: right;
   position: relative;
   right: 5px;
-  top: 8px;
+  top: 11px;
   cursor: pointer;
   display: none;
 }
@@ -136,7 +139,7 @@ body {
 }
 #nav-bar .nav-menu li > a {
   color: #fff;
-  font-weight: 100;
+  font-weight: 600;
   font-size: 1.2rem;
   letter-spacing: 2px;
   text-decoration: none;
@@ -187,8 +190,6 @@ body {
   padding: 8px 0;
   width: 100%;
   display: block;
-}
-#nav-bar .nav-menu .dropdown a:hover {
   border-bottom: 1px dashed #f76b50;
 }
 #nav-bar .nav-menu .trigger-enter .dropdown {
@@ -205,16 +206,39 @@ body {
   position: relative;
 }
 #slide .mySlides {
-  display: none;
-}
-#slide .mySlides img {
   width: 100%;
   height: 100vh;
-  object-fit: cover;
+  background-image: url(../img/img2.jpg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+#slide .mySlides .block {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.2);
+  color: #fff;
+  top: calc(50% - 230px + 54px);
+  left: calc(50% - 350px);
+  text-align: center;
+  padding: 30px 50px;
+  letter-spacing: 5px;
+  line-height: 2rem;
+  border-radius: 10px;
+}
+#slide .mySlides .block .title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  padding-bottom: 15px;
+}
+#slide .mySlides .block p {
+  font-size: 1.2rem;
+  max-width: 600px;
+  overflow: hidden;
+  text-align: center;
 }
 #slide .mySlides .text {
   color: #fff;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.2);
   font-size: 1.5rem;
   padding: 8px 5px;
   position: absolute;
@@ -290,22 +314,85 @@ body {
 #container {
   display: flex;
   height: 600px;
+  background: #ccc;
 }
 
-#article-content {
-  width: 100%;
+#article-area {
+  padding-top: 100px;
+}
+#article-area #article-box {
+  width: 1000px;
+  margin: 0 auto;
   display: flex;
   flex-wrap: wrap;
-  padding: 0 20px;
-  justify-content: center;
 }
-#article-content .article {
-  width: 400px;
+#article-area #article-box .article {
   height: 400px;
-  border: 1px solid black;
-  margin: 40px;
-  border-radius: 5px;
+  flex: 1 0 40%;
+  margin: 40px 30px;
+  border-radius: 10px;
   cursor: pointer;
+  position: relative;
+  display: flex;
+  opacity: 1;
+  transition: all 0.3s;
+}
+#article-area #article-box .article:hover {
+  opacity: 0.8;
+  transform: scale(1.2, 1.2);
+}
+#article-area #article-box .article:hover > .article-head {
+  background: rgba(0, 0, 0, 0.8);
+}
+#article-area #article-box .article:nth-child(-n+1) {
+  flex: 1 0 80%;
+}
+#article-area #article-box .article .article-head {
+  z-index: 2;
+  width: 100%;
+  color: #fff;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+}
+#article-area #article-box .article .article-head .publish {
+  text-align: center;
+  padding-bottom: 10px;
+  border-bottom: dotted #ccc 1px;
+  flex: 1 1 100%;
+}
+#article-area #article-box .article .article-head .publish .month {
+  padding-right: 5px;
+}
+#article-area #article-box .article .article-head .publish .date {
+  font-size: 25px;
+  font-weight: bold;
+}
+#article-area #article-box .article .article-head .publish .day {
+  display: none;
+}
+#article-area #article-box .article .article-head .publish .year {
+  padding-left: 5px;
+}
+#article-area #article-box .article .article-head .publish .time {
+  display: none;
+}
+#article-area #article-box .article .article-head .title h2 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: center;
+  padding: 10px 0 10px 0;
+  font-size: 1.5rem;
+}
+#article-area #article-box .article .article-body {
+  position: absolute;
+}
+#article-area #article-box .article .article-body img {
+  width: 100%;
+  height: 400px;
+  border-radius: 10px;
 }
 
 @media screen and (max-width: 1000px) {
