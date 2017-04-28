@@ -20,7 +20,7 @@ body {
   line-height: 1;
 }
 
-ol, ul {
+ol, ul, li {
   list-style: none;
 }
 
@@ -51,10 +51,6 @@ html {
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-}
-
-li {
-  list-style: none;
 }
 
 body {
@@ -116,6 +112,30 @@ body {
 #nav-bar .hamburger.open + .nav-menu {
   display: flex;
 }
+#nav-bar .dropdown-bg {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  border-radius: 2px;
+  background: #f7f7f7;
+  transition: all 0.5s;
+  opacity: 0;
+  top: 15px;
+}
+#nav-bar .dropdown-bg .arrow {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 0;
+  display: block;
+  background: #f7f7f7;
+  transform: translateY(-50%) rotate(45deg);
+}
+#nav-bar .dropdown-bg.open {
+  opacity: 1;
+}
 #nav-bar .nav-menu {
   -webkit-flex: 10 5 400px;
   flex: 10 5 400px;
@@ -149,35 +169,13 @@ body {
   height: 100%;
   text-align: center;
 }
-#nav-bar .nav-menu .dropdown-bg {
-  position: absolute;
-  width: 100px;
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  border-radius: 2px;
-  background: #f7f7f7;
-  transition: all 0.5s;
-  opacity: 0;
-}
-#nav-bar .nav-menu .dropdown-bg .arrow {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  top: 0;
-  display: block;
-  background: #f7f7f7;
-  transform: translateY(-50%) rotate(45deg);
-}
-#nav-bar .nav-menu .dropdown-bg.open {
-  opacity: 1;
-}
 #nav-bar .nav-menu .dropdown {
   position: absolute;
   overflow: hidden;
-  padding: 10px;
+  padding: 25px 10px 10px 10px;
   opacity: 0;
   display: none;
+  margin-top: -15px;
 }
 #nav-bar .nav-menu .dropdown div {
   padding: 5px;
@@ -350,16 +348,15 @@ body {
 #article-area #article-box .article .article-head {
   z-index: 2;
   width: 100%;
-  color: #fff;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
 }
 #article-area #article-box .article .article-head .publish {
+  color: #fff;
   text-align: center;
   padding-bottom: 10px;
-  border-bottom: dotted #ccc 1px;
   flex: 1 1 100%;
 }
 #article-area #article-box .article .article-head .publish .month {
@@ -378,16 +375,27 @@ body {
 #article-area #article-box .article .article-head .publish .time {
   display: none;
 }
-#article-area #article-box .article .article-head .title h2 {
+#article-area #article-box .article .article-head .title h2 > a {
+  color: #fff;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   text-align: center;
   padding: 10px 0 10px 0;
   font-size: 1.5rem;
+  text-decoration: none;
 }
 #article-area #article-box .article .article-body {
   position: absolute;
+}
+#article-area #article-box .article .article-body .more a {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  opacity: 0;
 }
 #article-area #article-box .article .article-body img {
   width: 100%;

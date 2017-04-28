@@ -45,7 +45,6 @@ window.addEventListener("scroll",function(e){
     }
 })
 
-
 function showSlides(index){
     var slides = document.querySelectorAll(".mySlides");
     var dots = document.querySelectorAll(".dot");
@@ -80,15 +79,16 @@ function handleEnter(){
     this.classList.add('trigger-enter');
     setTimeout(() => this.classList.contains('trigger-enter') && this.classList.add('trigger-enter-active'), 150);
     bg.classList.add('open');    
+
     const liWidth = this.getBoundingClientRect();
     const dropdown = this.querySelector('.dropdown');
 	const dropdownCoords = dropdown.getBoundingClientRect();
     const navCoords = nav.getBoundingClientRect();
     const coords = {
 		width: liWidth.width,
-		height: dropdownCoords.height,
-        top: liWidth.top - navCoords.top,
-		left: liWidth.left - navCoords.left
+		height: dropdownCoords.height - 15,
+        top: dropdownCoords.top - navCoords.top,
+		left: dropdownCoords.left
     };
     dropdown.style.setProperty('width', `${coords.width}px`);
     bg.style.setProperty('width', `${coords.width}px`);
