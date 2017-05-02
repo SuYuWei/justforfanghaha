@@ -6,284 +6,319 @@ html
     +box-sizing(border-box)
 body
     font-family: "Microsoft JhengHei"
-#nav-bar
-    width: 100%
-    position: fixed
-    top: 0
-    left: 0
-    z-index: 100
-    background: transparent
-    display: flex
-    .nav-title
-        +flex(1 1 250px)
-        padding: 15px 10px
-        text-align: center
-        a
-            font-size: 2rem
-            color: $navbartextColor
-            letter-spacing: 2px
-            padding: 11px 5px
-            font-weight: 600
-    .hamburger
-        width: 40px
-        height: 40px
-        float: right
-        position: relative
-        right: 5px
-        top: 11px
-        cursor: pointer
-        display: none
-        span
-            display: block
-            width: 80%
-            height: 3px
-            background: $navbartextColor
-            border-radius: 9px
-            position: absolute
-            // transition: .25s ease-in-out
-        span:nth-child(1)
-            top: 5px
-        span:nth-child(2),span:nth-child(3)
-            top: 15px
-        span:nth-child(4)
-            top: 25px
-    .hamburger.open
-        span:nth-child(1),span:nth-child(4)
-            opacity: 0
-        span:nth-child(2)
-            transform: rotate(45deg)
-        span:nth-child(3)
-            transform: rotate(-45deg)
-    .hamburger.open + .nav-menu
+// #body-div
+//     width: 100%
+//     height: 100vh
+//     background-image: url(../img/img5.jpg)
+//     background-position: 50% 50%
+//     background-repeat: no-repeat
+//     background-size: cover
+//     opacity: 0.8
+#blog-main
+    #nav-bar
+        width: 100%
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 100
+        background: transparent
         display: flex
-    .dropdown-bg
-        position: absolute
-        width: 100px
-        height: 200px
-        display: flex
-        justify-content: center
-        border-radius: 2px
-        background: #f7f7f7
-        transition: all 0.3s
-        opacity: 0
-        top: 15px
-        .arrow
+        .nav-title
+            +flex(1 1 250px)
+            padding: 15px 10px
+            text-align: center
+            a
+                font-size: 2rem
+                color: $navbartextColor
+                letter-spacing: 2px
+                padding: 11px 5px
+                font-weight: 600
+        .hamburger
+            width: 40px
+            height: 40px
+            float: right
+            position: relative
+            right: 5px
+            top: 11px
+            cursor: pointer
+            display: none
+            span
+                display: block
+                width: 80%
+                height: 3px
+                background: $navbartextColor
+                border-radius: 9px
+                position: absolute
+                // transition: .25s ease-in-out
+            span:nth-child(1)
+                top: 5px
+            span:nth-child(2),span:nth-child(3)
+                top: 15px
+            span:nth-child(4)
+                top: 25px
+        .hamburger.open
+            span:nth-child(1),span:nth-child(4)
+                opacity: 0
+            span:nth-child(2)
+                transform: rotate(45deg)
+            span:nth-child(3)
+                transform: rotate(-45deg)
+        .hamburger.open + .nav-menu
+            display: flex
+        .dropdown-bg
             position: absolute
-            width: 20px
-            height: 20px
-            top: 0
-            display: block
+            width: 100px
+            height: 200px
+            display: flex
+            justify-content: center
+            border-radius: 2px
             background: #f7f7f7
-            transform: translateY(-50%) rotate(45deg)
-    .dropdown-bg.open
-        opacity: 1
-    .nav-menu
-        +flex(10 5 400px)
-        display: flex
-        margin: 0
-        padding: 0
-        +align-items(center)
-        li
-            +flex(3)
-            &:hover
-                background: $navbarbgColor
-        .social
-            +flex(1)
-        li > a
-            color: $navbartextColor
-            font-size: 1.2rem
-            letter-spacing: 2px
-            padding: 20px 5px
-            display: inline-block
+            transition: all 0.3s
+            opacity: 0
+            top: 15px
+            .arrow
+                position: absolute
+                width: 20px
+                height: 20px
+                top: 0
+                display: block
+                background: #f7f7f7
+                transform: translateY(-50%) rotate(45deg)
+        .dropdown-bg.open
+            opacity: 1
+        .nav-menu
+            +flex(10 5 400px)
+            display: flex
+            margin: 0
+            padding: 0
+            +align-items(center)
+            li
+                +flex(3)
+                &:hover
+                    background: $navbarbgColor
+            .social
+                +flex(1)
+            li > a
+                color: $navbartextColor
+                font-size: 1.2rem
+                letter-spacing: 2px
+                padding: 20px 5px
+                display: inline-block
+                width: 100%
+                height: 100%
+                text-align: center
+                font-weight: 600
+            .dropdown
+                position: absolute
+                overflow: hidden
+                padding: 25px 10px 10px 10px
+                opacity: 0
+                display: none
+                margin-top: -15px
+                div
+                    padding: 5px
+                    text-align: center
+                a
+                    color: $navbarbgColor
+                    letter-spacing: 2px
+                    padding: 8px 0
+                    width: 100%
+                    display: block
+                    border-bottom: 1px dashed $navbarbgColor
+                    &:hover
+                        font-weight: bold
+                        transform: scale(1.2,1.2)
+            .trigger-enter 
+                .dropdown
+                    display: block
+            .trigger-enter-active 
+                .dropdown
+                    opacity: 1
+        &:hover
+            background: rgba(0, 0, 0, 0.6)
+    #slide
+        position: relative
+        height: 100vh
+        .mySlides 
             width: 100%
             height: 100%
-            text-align: center
-            font-weight: 600
-        .dropdown
-            position: absolute
-            overflow: hidden
-            padding: 25px 10px 10px 10px
-            opacity: 0
-            display: none
-            margin-top: -15px
-            div
-                padding: 5px
+            background-image: url(../img/img2.jpg)
+            background-position: 50% 50%
+            background-repeat: no-repeat
+            background-size: cover
+            .block
+                position: absolute
+                background: rgba(0, 0, 0, 0.2)
+                color: #fff
+                top: calc(50% - 230px + 54px)
+                left: calc(50% - 350px)
                 text-align: center
-            a
-                color: $navbarbgColor
-                letter-spacing: 2px
-                padding: 8px 0
-                width: 100%
-                display: block
-                border-bottom: 1px dashed $navbarbgColor
-        .trigger-enter 
-            .dropdown
-                display: block
-        .trigger-enter-active 
-            .dropdown
-                opacity: 1
-    &:hover
-        background: rgba(0, 0, 0, 0.6)
-#slide
-    position: relative
-    .mySlides
-        width: 100%
-        height: 100vh
-        background-image: url(../img/img2.jpg)
-        background-position: 50% 50%
-        background-repeat: no-repeat
-        background-size: cover
-        .block
-            position: absolute
-            background: rgba(0, 0, 0, 0.2)
-            color: #fff
-            top: calc(50% - 230px + 54px)
-            left: calc(50% - 350px)
-            text-align: center
-            padding: 30px 50px
-            letter-spacing: 5px
-            line-height: 2rem
-            border-radius: 10px
-            .title
-                font-size: 1.5rem
-                font-weight: 700
-                padding-bottom: 15px
-            p
-                font-size: 1.2rem
-                max-width: 600px
-                overflow: hidden
-                text-align: center
-        .text
-            color: #fff
-            background: rgba(0, 0, 0, 0.2)
-            font-size: 1.5rem
-            padding: 8px 5px
-            position: absolute
-            bottom: 2rem
-            margin-left: 1rem
-    .control
-        .prev, .next
-            cursor: pointer
-            position: absolute
-            width: auto
-            top: 50%
-            font-size: 3rem
-            font-weight: bold
-            padding: 1.5rem
-            color: #fff
-            &:hover
-                color: $navbarbgColor
-        .next
-            right: 0
-    .dot-block
-        position: absolute
-        width: 100%
-        bottom: 2rem
-        text-align: center
-    .dot
-        cursor: pointer
-        width: .8rem
-        height: .8rem
-        margin: 0 5px
-        background-color: #fff
-        border-radius: 50%
-        display: inline-block
-    .active, .dot:hover
-        background-color: $navbarbgColor
-    .fade
-        +animation-name(fade)
-        +animation-duration(1.5s)
-    +keyframes(fade)
-        from 
-            opacity: .6
-        to
-            opacity: 1
-#article-area
-    padding: 40px 0
-    #article-box
-        max-width: 1000px
-        margin: 0 auto
-        display: flex
-        flex-wrap: wrap
-        .article
-            flex: 1 0 40%
-            margin: 40px 30px
-            border-radius: 10px
-            // border: 1px solid black
-            position: relative
-            padding-bottom: 75px
-            box-shadow: 1px 1px 5px #555
-            background: #fff
-            &:nth-child(-n+1)
-                flex: 1 0 80%
-            .article-head
-                .publish
-                    color: #fff
-                    text-align: center
-                    // border-bottom: 1px dashed #555
-                    background: #337ab7
-                    border-top-left-radius: 10px
-                    border-top-right-radius: 10px
-                    padding: 10px
-                    margin-bottom: 20px
-                    .month
-                        padding-right: 5px
-                    .date
-                        font-size: 25px
-                        font-weight: bold
-                    .day
-                        display: none
-                    .year
-                        padding-left: 5px
-                    .time
-                        display: none
+                padding: 30px 50px
+                letter-spacing: 5px
+                line-height: 2rem
+                border-radius: 10px
                 .title
-                    h2
+                    font-size: 1.5rem
+                    font-weight: 700
+                    padding-bottom: 15px
+                p
+                    font-size: 1.2rem
+                    max-width: 600px
+                    overflow: hidden
+                    text-align: center
+            .text
+                color: #fff
+                background: rgba(0, 0, 0, 0.2)
+                font-size: 1.5rem
+                padding: 8px 5px
+                position: absolute
+                bottom: 2rem
+                margin-left: 1rem
+        .control
+            .prev, .next
+                cursor: pointer
+                position: absolute
+                width: auto
+                top: 50%
+                font-size: 3rem
+                font-weight: bold
+                padding: 1.5rem
+                color: #fff
+                &:hover
+                    color: $navbarbgColor
+            .next
+                right: 0
+        .button-down
+            position: absolute
+            width: 100%
+            bottom: 5rem
+            text-align: center
+            .img-scroll
+                cursor: pointer
+                width: 48px
+                +animation(bounceInUp 1s infinite)
+                +keyframes(bounceInUp)
+                    0% 
+                        transform: translateY(0px)
+                    50%
+                        transform: translateY(-50px)
+                    100%
+                        transform: translateY(0px)
+        .dot-block
+            position: absolute
+            width: 100%
+            bottom: 2rem
+            text-align: center
+        .dot
+            cursor: pointer
+            width: .8rem
+            height: .8rem
+            margin: 0 5px
+            background-color: #fff
+            border-radius: 50%
+            display: inline-block
+        .active, .dot:hover
+            background-color: $navbarbgColor
+        .fade
+            +animation(fade 1.5s)
+        +keyframes(fade)
+            from 
+                opacity: .6
+            to
+                opacity: 1
+    #article-area
+        padding: 40px 0
+        #article-box
+            max-width: 1000px
+            margin: 0 auto
+            display: flex
+            flex-wrap: wrap
+            .article
+                margin: 40px 30px
+                height: 420px
+                border-radius: 10px
+                box-shadow: 1px 1px 5px #555
+                background: #fff
+                position: relative
+                &:nth-child(-n+1)
+                    flex: 1 0 80%
+                &:nth-child(n+2)
+                    flex: 1 0 40%
+                    max-width: calc(50% - 60px)
+                .article-head
+                    .publish
+                        color: #fff
                         text-align: center
-                        position: absolute
-                        top: 370px
-                        width: 100%
-                        a
-                            color: #555
-                            // white-space: nowrap
-                            // overflow: hidden
-                            // text-overflow: ellipsis
-                            font-size: 1.5rem
+                        // border-bottom: 1px dashed #555
+                        background: #bbb
+                        border-top-left-radius: 10px
+                        border-top-right-radius: 10px
+                        padding: 10px
+                        margin-bottom: 20px
+                        .month
+                            padding-right: 5px
+                        .date
+                            font-size: 25px
                             font-weight: bold
-                            letter-spacing: 1px
-            .article-body
-                .more
-                    a
-                        opacity: 0
+                        .day
+                            display: none
+                        .year
+                            padding-left: 5px
+                        .time
+                            display: none
+                    .title
+                        h2
+                            text-align: center
+                            position: absolute
+                            top: 360px
+                            width: 100%
+                            a
+                                color: #555
+                                // white-space: nowrap
+                                // overflow: hidden
+                                // text-overflow: ellipsis
+                                font-size: 1.5rem
+                                font-weight: bold
+                                letter-spacing: 1px
+                .article-body
+                    .more
+                        a
+                            opacity: 0
+                            position: absolute
+                            top: 0
+                            left: 0
+                            width: 100%
+                            height: 100%
+                    p > img
+                        // display: block
+                        // width: 380px
+                        // height: 285px
+                        // margin: 0 auto
+                        // object-fit: cover
+                        display: block
+                        width: 380px
+                        height: 285px
                         position: absolute
-                        top: 0
-                        left: 0
-                        width: 100%
-                        height: 100%
-                img
-                    display: block
-                    width: 380px
-                    height: 285px
-                    margin: 0 auto
-                    object-fit: cover
-                    // clip: rect(0px,380px,280px,0px)
-    .page
-        padding: 30px 0 10px 0
+                        top: 60px
+                        left: 30px
+                        object-fit: cover
+                        clip: rect(0px,380px,280px,0px)
+        .page
+            padding: 30px 0 10px 0
+            text-align: center
+            font-size: 1.5rem
+            span
+                padding: 0 5px 0 5px
+            a
+                padding: 0 5px 0 5px
+                color: #555
+    #footer
+        line-height: 200%
+        clear: both
+        padding: 30px 0 30px 0 
+        background: rgba(0, 0, 0, 0.6)
+        color: #fff 
         text-align: center
-        font-size: 1.5rem
-        span
-            padding: 0 5px 0 5px
-        a
-            padding: 0 5px 0 5px
-            color: #555
-            
-#footer
-    line-height: 200%
-    clear: both
-    padding: 30px 0 30px 0 
-    background: rgba(0, 0, 0, 0.6)
-    color: #fff 
-    text-align: center
-    font-size: 1rem          
+        font-size: 1rem          
 
                     

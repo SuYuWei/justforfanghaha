@@ -1,6 +1,6 @@
 var slideIndex = 1;
 var timeOut;
-var imgArr = ["img1","img2","img3","img4"]
+var imgArr = ["https://farm6.staticflickr.com/5347/31069776240_1ab02ab41a_c.jpg","https://farm2.staticflickr.com/1642/23938752402_d9bb553f56_c.jpg","https://farm1.staticflickr.com/282/31667672364_b47a965a2c_c.jpg","https://farm1.staticflickr.com/382/32206118601_e66f207594_c.jpg"]
 showSlides(slideIndex);
 
 var menu = document.querySelector(".hamburger");
@@ -31,18 +31,20 @@ function resize(){
     }
 }
 
-
 var navBar = document.getElementById("nav-bar");
 var slideShow = document.getElementById("slide");
 window.addEventListener("scroll",function(e){
     e.preventDefault();
     var windowScroll = this.scrollY;
-    var slideHeight = slideShow.offsetHeight
-    if(windowScroll > slideHeight) {
+    var slideHeight = slideShow.offsetHeight;
+    console.log(windowScroll);
+    console.log(slideHeight);
+    if(windowScroll >= slideHeight) {
         navBar.style.setProperty("background","rgba(0, 0, 0, 0.6)");
     }else {
         navBar.style.setProperty("background","transparent");
     }
+
 })
 
 function showSlides(index){
@@ -56,7 +58,7 @@ function showSlides(index){
     dots.forEach(dot => dot.classList.remove("active"));
     
     slides[slideIndex-1].style.display = "block";
-    slides[slideIndex-1].style.backgroundImage = "url(img/"+imgArr[slideIndex-1]+".jpg)";
+    slides[slideIndex-1].style.backgroundImage = "url("+imgArr[slideIndex-1]+")";
     dots[slideIndex-1].classList.add("active");
     
     timeOut = setTimeout(function(){
@@ -100,6 +102,11 @@ function handleLeave(){
     this.classList.remove('trigger-enter', 'trigger-enter-active');
     bg.classList.remove('open');
 }
+
+$(".img-scroll").on("click",function(){
+    var slideHeight = slideShow.offsetHeight;
+    $('html, body').animate({ scrollTop: slideHeight }, 600);
+})
 
 // $(function(){
 //     console.log("test");
