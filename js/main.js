@@ -37,12 +37,12 @@ window.addEventListener("scroll",function(e){
     e.preventDefault();
     var windowScroll = this.scrollY;
     var slideHeight = slideShow.offsetHeight;
-    console.log(windowScroll);
-    console.log(slideHeight);
     if(windowScroll >= slideHeight) {
         navBar.style.setProperty("background","rgba(0, 0, 0, 0.6)");
+        $("#about-me").show();
     }else {
         navBar.style.setProperty("background","transparent");
+        $("#about-me").hide();
     }
 
 })

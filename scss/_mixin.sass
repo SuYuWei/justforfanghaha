@@ -1,6 +1,3 @@
-$color: #fff
-$width: 968px
-
 @mixin bg($name,$bg)
     background: url("../img/#{$name}.#{$bg}")
     // width: image-width("../img/#{$name}.#{$bg}")
@@ -27,4 +24,9 @@ $width: 968px
     -webkit-box-sizing: border-box
     -moz-box-sizing: border-box
     
-
+@mixin bgFixed($name,$bg)
+    background: url("../img/#{$name}.#{$bg}")
+    background-attachment: fixed
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
