@@ -224,36 +224,46 @@ body {
 #blog-main #footer #bottom > a, #article-main #footer #bottom > a, #category-main #footer #bottom > a {
   display: none;
 }
+#blog-main #to-top, #article-main #to-top, #category-main #to-top {
+  position: fixed;
+  right: 30px;
+  bottom: 30px;
+  cursor: pointer;
+  animation: all 5s;
+  transform: translateY(100px);
+  transition: transform 1s;
+}
+#blog-main #to-top.showIn, #article-main #to-top.showIn, #category-main #to-top.showIn {
+  transform: translateY(0);
+}
 #blog-main #about-me, #article-main #about-me, #category-main #about-me {
   position: fixed;
-  left: 30px;
-  bottom: 30px;
-  width: 150px;
-  height: 150px;
-  background: url("../img/me.jpg") no-repeat;
-  background-size: cover;
-  z-index: 100;
-  border: 5px solid #e2387d;
-  border-radius: 50%;
+  left: 10px;
+  bottom: 10px;
+  z-index: 101;
   display: none;
 }
-#blog-main #about-me .test, #article-main #about-me .test, #category-main #about-me .test {
-  position: relative;
+#blog-main #about-me .photo, #article-main #about-me .photo, #category-main #about-me .photo {
+  width: 130px;
+  height: 130px;
+  border-radius: 50%;
+  border: 3px solid #e2387d;
+  cursor: pointer;
 }
-#blog-main #about-me .test .text-bg, #article-main #about-me .test .text-bg, #category-main #about-me .test .text-bg {
+#blog-main #about-me .content .text-bg, #article-main #about-me .content .text-bg, #category-main #about-me .content .text-bg {
   position: absolute;
-  top: -90px;
-  left: 25px;
+  top: -80px;
+  left: 10px;
   border-radius: 10px;
   background: #e2387d;
-  width: 15em;
-  height: 50px;
+  width: 12em;
+  height: 40px;
 }
-#blog-main #about-me .test .text-bg:before, #article-main #about-me .test .text-bg:before, #category-main #about-me .test .text-bg:before {
+#blog-main #about-me .content .text-bg:before, #article-main #about-me .content .text-bg:before, #category-main #about-me .content .text-bg:before {
   content: "";
   display: block;
   position: absolute;
-  top: 48px;
+  top: 36px;
   left: 55px;
   width: 0;
   height: 0;
@@ -261,14 +271,14 @@ body {
   border-style: solid;
   border-color: #e2387d transparent transparent transparent;
 }
-#blog-main #about-me .test .text, #article-main #about-me .test .text, #category-main #about-me .test .text {
+#blog-main #about-me .content > h1, #article-main #about-me .content > h1, #category-main #about-me .content > h1 {
   position: absolute;
-  top: -83px;
-  left: 30px;
-  width: 7em;
+  top: -74px;
+  left: 16px;
+  width: 6.5em;
   padding: 5px;
   color: #fff;
-  font-size: 2rem;
+  font-size: 1.5rem;
   display: block;
   border-right: 1px solid #fff;
   overflow: hidden;
@@ -292,6 +302,79 @@ body {
     width: 0;
   }
 }
+#blog-main #me-box, #article-main #me-box, #category-main #me-box {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 101;
+  background: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+#blog-main #me-box .card, #article-main #me-box .card, #category-main #me-box .card {
+  max-width: 350px;
+  color: #555;
+  background: #fff;
+  border-radius: 5px;
+}
+#blog-main #me-box .card > img, #article-main #me-box .card > img, #category-main #me-box .card > img {
+  height: 230px;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+#blog-main #me-box .card .container, #article-main #me-box .card .container, #category-main #me-box .card .container {
+  padding: 10px 25px;
+  letter-spacing: 3px;
+  color: #555;
+  position: relative;
+}
+#blog-main #me-box .card .container p, #article-main #me-box .card .container p, #category-main #me-box .card .container p {
+  font-size: 1rem;
+  line-height: 24px;
+}
+#blog-main #me-box .card .container .title, #article-main #me-box .card .container .title, #category-main #me-box .card .container .title {
+  font-size: 2rem;
+  text-align: left;
+}
+#blog-main #me-box .card .container .subTitle, #article-main #me-box .card .container .subTitle, #category-main #me-box .card .container .subTitle {
+  font-size: 1.4rem;
+  padding: 6px 0;
+  margin-bottom: 5px;
+  color: #aaa;
+  text-align: left;
+}
+#blog-main #me-box .card .container .fb-content, #article-main #me-box .card .container .fb-content, #category-main #me-box .card .container .fb-content {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  cursor: pointer;
+}
+#blog-main #me-box .card .social, #article-main #me-box .card .social, #category-main #me-box .card .social {
+  font-size: 2rem;
+  display: flex;
+  border-top: 1px solid #fff;
+  border-bottom-right-radius: 5px;
+  text-align: center;
+}
+#blog-main #me-box .card .social a, #article-main #me-box .card .social a, #category-main #me-box .card .social a {
+  color: #fff;
+  background: #e2387d;
+  flex: 1;
+  padding: 8px 0;
+  border-bottom-right-radius: 5px;
+}
+#blog-main #me-box .card .social a:first-child, #article-main #me-box .card .social a:first-child, #category-main #me-box .card .social a:first-child {
+  border-right: 2px solid #fff;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 0px;
+}
+
 #blog-main #slide {
   position: relative;
   height: 100vh;
@@ -305,9 +388,8 @@ body {
 }
 #blog-main #slide .mySlides .block {
   position: absolute;
-  background: rgba(0, 0, 0, 0.2);
   color: #fff;
-  top: calc(50% - 230px + 54px);
+  top: calc(50% - 54px);
   width: 500px;
   margin-left: auto;
   margin-right: auto;
@@ -364,42 +446,6 @@ body {
 #blog-main #slide .button-down .img-scroll {
   cursor: pointer;
   width: 48px;
-  -moz-animation: bounceInUp 1s infinite;
-  -webkit-animation: bounceInUp 1s infinite;
-  animation: bounceInUp 1s infinite;
-}
-@-moz-keyframes bounceInUp {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@-webkit-keyframes bounceInUp {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-@keyframes bounceInUp {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-50px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
 }
 #blog-main #slide .dot-block {
   position: absolute;
@@ -740,11 +786,4 @@ body {
 }
 #article-main #article-area #article-box .article-footer .refer {
   display: none;
-}
-#article-main #article-area #article-box .article-footer .back-to-top {
-  position: fixed;
-  bottom: 0;
-  right: 0;
-  padding: 10px;
-  font-size: 2rem;
 }
